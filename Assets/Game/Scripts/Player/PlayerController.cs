@@ -39,8 +39,9 @@ namespace Scripts.Player
         }
         void FixedUpdate()
         {
-          //  rb.MovePosition(rb.position + (direction * speed * Time.deltaTime));
+          
             rb.velocity = direction * speed;
+
         }
     }
 
