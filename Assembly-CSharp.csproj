@@ -63,8 +63,10 @@
     <Compile Include="Assets/Game/Scripts/Camera/CameraController.cs" />
     <Compile Include="Assets/Game/Scripts/Player/PlayerAnimations.cs" />
     <Compile Include="Assets/Game/Scripts/Player/PlayerController.cs" />
+    <Compile Include="Assets/Game/Scripts/Enemy/EnemyController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets/Modelos3D/Personagens/Animacoes/Animacoes_Zumbi 1.txt" />
     <None Include="Assets/Modelos3D/Personagens/Animacoes/Animacoes_Zumbi.txt" />
   </ItemGroup>
   <ItemGroup>
