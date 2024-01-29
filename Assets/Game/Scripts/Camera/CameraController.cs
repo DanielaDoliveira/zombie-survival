@@ -2,19 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+namespace com.Daniela.cameras
 {
 
-    public Transform target;
-    Vector3 distance;
-    void Start()
+    public class CameraController : MonoBehaviour
     {
-        distance = transform.position - target.position;
+
+        public Transform Target;
+        Vector3 distance;
+        void Start()
+        {
+            Target = GameObject.FindGameObjectWithTag("Jogador").GetComponent<Transform>();
+            distance = transform.position - Target.position;
+
+        }
+
+
+        void Update()
+        {
+
+            transform.position = Target.position + distance;
+        }
     }
 
-   
-    void Update()
-    {
-        transform.position = target.position + distance;
-    }
 }

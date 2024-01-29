@@ -1,19 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
-using UnityEngine;
 
-namespace Scripts.Player
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+namespace com.Daniela.Player
 {
 
     public class PlayerController : MonoBehaviour
     {
-        public float speed;
-        private Rigidbody rb;
+      
+     
         UnityEngine.Vector3 direction;
+        public GameObject GameOverPanel;
+
+        [Header("Player Life Script: ")]
+        [Space]
+       [SerializeField]private Status _status;
+        private PlayerMovement _pM;
+
+        public LayerMask GroundMask;
+
+        private int _scene;
         void Start()
         {
-            rb = GetComponent<Rigidbody>();
+            _pM = GetComponent<PlayerMovement>();
+            _scene = SceneManager.GetActiveScene().buildIndex;
+         
+            GameOverPanel.SetActive(false);
+
+            _status = GetComponent<Status>();
+            Time.timeScale = 1;
+         
         }
 
       
@@ -22,27 +41,39 @@ namespace Scripts.Player
             float x_axis = Input.GetAxis("Horizontal");
             float z_axis = Input.GetAxis("Vertical");
             Move(x_axis, z_axis);
-        }
-        void Move(float x, float z)
-        {
-             direction = new UnityEngine.Vector3(x, 0, z);
-          
-           
-            if(direction != UnityEngine.Vector3.zero)
-            {
-                GetComponent<PlayerAnimations>().SetRun(true);
-            }
-            else
-            {
-                GetComponent<PlayerAnimations>().SetRun(false);
-            }
+            CheckLive();
+
         }
         void FixedUpdate()
         {
+
           
-            rb.velocity = direction * speed;
+            _pM.MoveCharacter(direction, _status.Speed);
+            _pM.RotatePlayer(GroundMask);
 
         }
+
+        void Move(float x, float z)
+        {
+             direction = new UnityEngine.Vector3(x, 0, z);
+            GetComponent<PlayerAnimations>().SetRun(direction.magnitude);
+           
+          
+        }
+       public void CheckLive()
+        {
+            
+            if (_status.Life <=0)
+            {
+                if (Input.GetButtonDown("Fire1"))
+                {
+                   SceneManager.LoadScene(_scene);
+                }
+            }
+        }
+
+       
+        
     }
 
   

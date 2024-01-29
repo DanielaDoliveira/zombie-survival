@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Inimigo
   - Jogador
+  - Generator
+  - Slider
   layers:
   - Default
   - TransparentFX

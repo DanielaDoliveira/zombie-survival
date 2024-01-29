@@ -1,14 +1,22 @@
 ﻿<Properties StartupConfiguration="{28BBA9C8-DEB4-3DCF-DCFA-4A7236070067}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/Enemy/EnemyController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/Enemy/ChooseZombieType.cs">
     <Files>
-      <File FileName="Assets/Game/Scripts/Player/PlayerController.cs" Line="24" Column="34" />
-      <File FileName="Assets/Modelos3D/Personagens/Animacoes/Animacoes_Zumbi.txt" Line="4" Column="23" />
-      <File FileName="Assets/Game/Scripts/Enemy/EnemyController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/Player/WeaponController.cs" Line="34" Column="2" />
+      <File FileName="Assets/Game/Scripts/Player/Bullet.cs" Line="13" Column="9" />
+      <File FileName="Assets/Game/Scripts/Player/CharacterMovement.cs" Line="18" Column="8" />
+      <File FileName="Assets/Game/Scripts/Enemy/EnemyController.cs" Line="17" Column="38" />
+      <File FileName="Assets/Game/Scripts/Player/PlayerController.cs" Line="69" Column="18" />
+      <File FileName="Assets/Game/Scripts/Player/PlayerMovement.cs" Line="20" Column="1" />
+      <File FileName="Assets/Game/Scripts/Player/PlayerAnimations.cs" Line="27" Column="2" />
+      <File FileName="Assets/Game/Scripts/Status.cs" Line="13" Column="6" />
+      <File FileName="Assets/Game/Scripts/IDead.cs" Line="7" Column="25" />
+      <File FileName="Assets/Game/Scripts/Player/PlayerLife.cs" Line="44" Column="1" />
+      <File FileName="Assets/Game/Scripts/Enemy/ChooseZombieType.cs" Line="20" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="cc69559a-7c11-44e1-aa63-cef0cec031c7" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3a7cd85a-d15b-4295-bb23-300bef9bf977" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

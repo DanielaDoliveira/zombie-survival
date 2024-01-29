@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Scripts.Player
+namespace com.Daniela.Player
 
 {
     public class PlayerAnimations : MonoBehaviour
@@ -18,9 +18,9 @@ namespace Scripts.Player
         {
 
         }
-        public void SetRun(bool isMoving)
+        public void SetRun(float run)
         {
-            GetComponent<Animator>().SetBool("Moving", isMoving);
+            GetComponent<Animator>().SetFloat("Moving",run);
         }
     }
 
