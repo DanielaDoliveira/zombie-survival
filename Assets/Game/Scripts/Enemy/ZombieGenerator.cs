@@ -15,35 +15,66 @@ namespace com.Daniela.Enemy
         public float timeToGenerate;
 
         private float _time_counter;
+        private int _random_distance;
+        public LayerMask LayerEnemy;
 
-       
+
         void Start()
         {
            
            
         _time_counter = 0;
-        
+            _random_distance = 3;
 
     }
 
 
     void Update()
         {
-            CreateZombie();
-        }
-
-        void CreateZombie()
-        {
             _time_counter += Time.deltaTime;
-          
-            if (_time_counter>= timeToGenerate)
+
+            if (_time_counter >= timeToGenerate)
             {
-                Instantiate(Zombie_prefab, transform.position, transform.rotation);
+                StartCoroutine(CreateZombie());
                 _time_counter = 0;
             }
         }
 
-    
+        IEnumerator CreateZombie()
+        {
+            Random.InitState((int)System.DateTime.Now.Ticks);
+          
+            Vector3 creatingInitialPosition = RandomPositions();
+            
+            Collider[] has_enemy = Physics.OverlapSphere(creatingInitialPosition, 1,LayerEnemy);
+
+            while(has_enemy.Length > 0)
+            {
+                 creatingInitialPosition = RandomPositions();
+                has_enemy = Physics.OverlapSphere(creatingInitialPosition, 1, LayerEnemy);
+                yield return null;
+                
+
+            }
+         
+                Instantiate(Zombie_prefab, creatingInitialPosition, transform.rotation);
+
+            
+            
+           
+        }
+
+        public Vector3 RandomPositions()
+        {
+          
+            Vector3 pos = Random.insideUnitSphere * _random_distance;
+            pos += transform.position;
+            pos.y = 0;
+            return pos;
+        }
+
+
+
 
 
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace com.Daniela.System
+namespace com.Daniela.Management
 {
     public class AudioManager : MonoBehaviour
     {

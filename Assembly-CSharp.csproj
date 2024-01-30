@@ -64,12 +64,13 @@
     <Compile Include="Assets/Game/Scripts/Enemy/ZombieGenerator.cs" />
     <Compile Include="Assets/Game/Scripts/Player/PlayerAnimations.cs" />
     <Compile Include="Assets/Game/Scripts/Enemy/ChooseZombieType.cs" />
-    <Compile Include="Assets/Game/Scripts/Player/Bullet.cs" />
     <Compile Include="Assets/Game/Scripts/IDead.cs" />
+    <Compile Include="Assets/Game/Scripts/Player/Bullet.cs" />
     <Compile Include="Assets/Game/Scripts/AudioManager.cs" />
     <Compile Include="Assets/Game/Scripts/Enemy/EnemyController.cs" />
     <Compile Include="Assets/Game/Scripts/Camera/CameraController.cs" />
     <Compile Include="Assets/Game/Scripts/Player/PlayerLife.cs" />
+    <Compile Include="Assets/Game/Scripts/Enemy/IEnemyBehaviour.cs" />
     <Compile Include="Assets/Game/Scripts/Enemy/EnemyAnimations.cs" />
     <Compile Include="Assets/Game/Scripts/Player/PlayerController.cs" />
     <Compile Include="Assets/Game/Scripts/CharacterMovement.cs" />

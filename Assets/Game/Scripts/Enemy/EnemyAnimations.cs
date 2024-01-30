@@ -11,6 +11,11 @@ namespace com.Daniela.Enemy
         {
             GetComponent<Animator>().SetBool("Atacando", isAttacking);
         }
+        public void EnemyMove(float move)
+        {
+          
+            GetComponent<Animator>().SetFloat("Movendo", move);
+        }
     }
 
 }

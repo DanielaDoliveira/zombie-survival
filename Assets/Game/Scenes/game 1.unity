@@ -2099,7 +2099,7 @@ Transform:
   - {fileID: 1606474880}
   - {fileID: 173261257}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &64510014
 PrefabInstance:
@@ -3333,7 +3333,7 @@ GameObject:
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &134060036
 Transform:
   m_ObjectHideFlags: 0
@@ -3342,12 +3342,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134060035}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10, y: 0, z: 0.00012397766}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1500312671}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &134060037
 MonoBehaviour:
@@ -3364,6 +3364,9 @@ MonoBehaviour:
   Zombie_prefab: {fileID: 4018676086208266519, guid: 313d502cf080d40cf98f479ca4af6145,
     type: 3}
   timeToGenerate: 2
+  LayerEnemy:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &135142078
 GameObject:
   m_ObjectHideFlags: 0
@@ -31639,7 +31642,6 @@ Transform:
   - {fileID: 1331766266}
   - {fileID: 1732942499}
   - {fileID: 2070118389}
-  - {fileID: 134060036}
   - {fileID: 1073569410}
   - {fileID: 714968870}
   - {fileID: 672471991}
@@ -35415,7 +35417,7 @@ GameObject:
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1703133119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35431,6 +35433,9 @@ MonoBehaviour:
   Zombie_prefab: {fileID: 4018676086208266519, guid: 313d502cf080d40cf98f479ca4af6145,
     type: 3}
   timeToGenerate: 2
+  LayerEnemy:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!4 &1703133120
 Transform:
   m_ObjectHideFlags: 0
@@ -35444,7 +35449,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1704925045
 PrefabInstance:
@@ -37524,7 +37529,7 @@ GameObject:
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1803530575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37540,6 +37545,9 @@ MonoBehaviour:
   Zombie_prefab: {fileID: 4018676086208266519, guid: 313d502cf080d40cf98f479ca4af6145,
     type: 3}
   timeToGenerate: 1
+  LayerEnemy:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!4 &1803530576
 Transform:
   m_ObjectHideFlags: 0
@@ -37553,7 +37561,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1811444318
 PrefabInstance:
@@ -39426,6 +39434,9 @@ MonoBehaviour:
   Zombie_prefab: {fileID: 4018676086208266519, guid: 313d502cf080d40cf98f479ca4af6145,
     type: 3}
   timeToGenerate: 3
+  LayerEnemy:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!4 &1913046334
 Transform:
   m_ObjectHideFlags: 0
@@ -39434,12 +39445,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913046332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9, y: 0, z: -27.2}
+  m_LocalPosition: {x: -64.7, y: 0, z: -3.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1921435656
 PrefabInstance:
@@ -44891,7 +44902,7 @@ PrefabInstance:
     - target: {fileID: 6430400327140037052, guid: 3ebc5f0f455a04358bc8f14470b1b09d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6430400327140037052, guid: 3ebc5f0f455a04358bc8f14470b1b09d,
         type: 3}
