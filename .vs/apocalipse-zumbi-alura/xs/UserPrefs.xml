@@ -1,31 +1,24 @@
 ﻿<Properties StartupConfiguration="{28BBA9C8-DEB4-3DCF-DCFA-4A7236070067}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/Player/PlayerLife.cs">
-    <Files>
-      <File FileName="Assets/Game/Scripts/Player/WeaponController.cs" Line="3" Column="29" />
-      <File FileName="Assets/Game/Scripts/Player/PlayerController.cs" Line="59" Column="1" />
-      <File FileName="Assets/Game/Scripts/Player/PlayerMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets/Game/Scripts/Player/PlayerAnimations.cs" Line="1" Column="1" />
-      <File FileName="Assets/Game/Scripts/Status.cs" Line="1" Column="1" />
-      <File FileName="Assets/Game/Scripts/IDead.cs" Line="1" Column="1" />
-      <File FileName="Assets/Game/Scripts/Enemy/EnemyController.cs" Line="4" Column="29" />
-      <File FileName="Assets/Game/Scripts/Enemy/ZombieGenerator.cs" Line="38" Column="57" />
-      <File FileName="Assets/Game/Scripts/AudioManager.cs" Line="5" Column="27" />
-      <File FileName="Assets/Game/Scripts/Player/Bullet.cs" Line="4" Column="29" />
-      <File FileName="Assets/Game/Scripts/Player/PlayerLife.cs" Line="6" Column="29" />
-    </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="Unity" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f00ac2e2-4fbe-4858-8943-5a6b0074828e" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/Enemy/ZombieGenerator.cs">
+    <Files>
+      <File FileName="Assets/Game/Scripts/Player/WeaponController.cs" />
+      <File FileName="Assets/Game/Scripts/Player/PlayerController.cs" />
+      <File FileName="Assets/Game/Scripts/Player/PlayerMovement.cs" />
+      <File FileName="Assets/Game/Scripts/Player/PlayerAnimations.cs" />
+      <File FileName="Assets/Game/Scripts/Status.cs" />
+      <File FileName="Assets/Game/Scripts/IDead.cs" />
+      <File FileName="Assets/Game/Scripts/Enemy/EnemyController.cs" />
+      <File FileName="Assets/Game/Scripts/Enemy/ZombieGenerator.cs" Line="64" Column="12" />
+      <File FileName="Assets/Game/Scripts/AudioManager.cs" />
+      <File FileName="Assets/Game/Scripts/Player/Bullet.cs" />
+      <File FileName="Assets/Game/Scripts/Player/PlayerLife.cs" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="10e9f2cd-7ebd-4102-ab66-b75bb07294fb" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
