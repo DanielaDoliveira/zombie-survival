@@ -19,7 +19,14 @@ namespace com.Daniela.Enemy
         public LayerMask LayerEnemy;
         private Transform _target;
         private float _player_distance_to_generate = 20;
+        private int max_zombie_amount = 2;
+        private int zombie_amount;
+        private float time_to_add_next_difficult = 20;
+        private float time_difficult_counter;
 
+
+        /* jogo por level: level 1- 6 zumbis, level 2 - 12 level 3 - 18 level 4 - 24 assim por diante. O level será 
+        contado no meio da tela dinamicamente em sincronia com a quantidade de zumbis mortos  */
 
         void Start()
         {
@@ -27,6 +34,11 @@ namespace com.Daniela.Enemy
             _target = GameObject.FindGameObjectWithTag("Jogador").GetComponent<Transform>();
             _time_counter = 0;
             _random_distance = 3;
+            time_difficult_counter = time_to_add_next_difficult;
+            for (int i = 0; i < max_zombie_amount; i++)
+            {
+                StartCoroutine(CreateZombie());
+            }
 
         }
 
@@ -34,7 +46,10 @@ namespace com.Daniela.Enemy
         void Update()
         {
             float _distance = Vector3.Distance(transform.position, _target.position);
-            if (_distance > _player_distance_to_generate)
+            bool can_generate_for_distance = _distance > _player_distance_to_generate;
+            bool can_generate_for_max_zombie_amount = zombie_amount < max_zombie_amount;
+
+            if (can_generate_for_distance && can_generate_for_max_zombie_amount)
             {
                 _time_counter += Time.deltaTime;
 
@@ -44,11 +59,14 @@ namespace com.Daniela.Enemy
                     _time_counter = 0;
                 }
             }
+            AddDifficult();
+
 
         }
 
         IEnumerator CreateZombie()
         {
+
             Random.InitState((int)System.DateTime.Now.Ticks);
 
             Vector3 creatingInitialPosition = RandomPositions();
@@ -64,9 +82,10 @@ namespace com.Daniela.Enemy
 
             }
 
-            Instantiate(Zombie_prefab, creatingInitialPosition, transform.rotation);
-
-
+            EnemyController zombie = Instantiate(Zombie_prefab, creatingInitialPosition, transform.rotation).GetComponent<EnemyController>();
+            zombie.MyGenerator = this;
+            zombie_amount++;
+            Debug.Log("Zombie:" + zombie_amount);
 
 
         }
@@ -87,6 +106,18 @@ namespace com.Daniela.Enemy
             Gizmos.DrawWireSphere(transform.position, _random_distance);
         }
 
+        public void RemoveZombieLiveAmount()
+        {
+            zombie_amount--;
+        }
+        public void AddDifficult()
+        {
+            if (Time.timeSinceLevelLoad > time_difficult_counter)
+            {
+                max_zombie_amount++;
+                time_difficult_counter = Time.timeSinceLevelLoad + time_to_add_next_difficult;
+            }
+        }
 
 
 

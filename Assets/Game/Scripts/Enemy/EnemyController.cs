@@ -21,9 +21,10 @@ namespace com.Daniela.Enemy
         private int _random_distance;
         private Vector3 random_pos;
         private Vector3 direction;
-
-        //  [SerializeField] private float _speed = 5f;
-
+        private float percent_medicine_kit = 0.1f;
+        public GameObject MedicineKitPrefab;
+        private InterfaceControl _interfaceControl;
+        [HideInInspector] public ZombieGenerator MyGenerator;
         void Start()
         {
             time_between_random_pos = 4;
@@ -33,7 +34,7 @@ namespace com.Daniela.Enemy
             _cM = GetComponent<CharacterMovement>();
             _status = GetComponent<Status>();
             Target = GameObject.FindGameObjectWithTag("Jogador").GetComponent<Transform>();
-
+            _interfaceControl = GameObject.FindObjectOfType(typeof(InterfaceControl)) as InterfaceControl;
 
         }
 
@@ -94,6 +95,9 @@ namespace com.Daniela.Enemy
         public void Dead()
         {
             Destroy(gameObject);
+            MedicineKitVerifier(percent_medicine_kit);
+            _interfaceControl.UpdateDeathZombies();
+            MyGenerator.RemoveZombieLiveAmount();
         }
         public void Wander()
         {
@@ -129,6 +133,14 @@ namespace com.Daniela.Enemy
             GetComponent<EnemyAnimations>().EnemyAttack(false);
             _cM.MoveCharacter(direction, _status.Speed);
             _cM.CalculateRotation(direction);
+        }
+
+        public void MedicineKitVerifier(float gen_percent)
+        {
+            if (Random.value <= gen_percent)
+            {
+                Instantiate(MedicineKitPrefab, transform.position, Quaternion.identity);
+            }
         }
     }
 

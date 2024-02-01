@@ -1513,6 +1513,8 @@ MonoBehaviour:
   Target: {fileID: 0}
   _status: {fileID: 0}
   DeathSoundFx: {fileID: 8300000, guid: f85f0d673b54ff3429fd77543d83179a, type: 3}
+  MedicineKitPrefab: {fileID: 6244942792491199242, guid: 359007e897776471b96d2862f9c2cecb,
+    type: 3}
 --- !u!114 &5505475805323284013
 MonoBehaviour:
   m_ObjectHideFlags: 0
