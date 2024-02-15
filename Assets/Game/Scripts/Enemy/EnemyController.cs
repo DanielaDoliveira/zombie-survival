@@ -8,8 +8,10 @@ using UnityEngine;
 namespace com.Daniela.Enemy
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class EnemyController : MonoBehaviour, IDead
+    public class EnemyController : MonoBehaviour, IDead, IEnemyBehaviour
     {
+
+
 
         private CharacterMovement _cM;
         private int _min_damage, _max_damage;
@@ -25,6 +27,7 @@ namespace com.Daniela.Enemy
         public GameObject MedicineKitPrefab;
         private InterfaceControl _interfaceControl;
         [HideInInspector] public ZombieGenerator MyGenerator;
+
         void Start()
         {
             time_between_random_pos = 4;
@@ -74,9 +77,13 @@ namespace com.Daniela.Enemy
         }
 
 
-        void EnemyAttackPlayer()
+        public void EnemyAttackPlayer()
         {
             int damage = Random.Range(_min_damage, _max_damage);
+            Quaternion invertedPos = Quaternion.LookRotation(-transform.forward);
+            BloodControl player = GameObject.FindGameObjectWithTag("Jogador").GetComponent<BloodControl>();
+            player.BloodParticle(transform.position, invertedPos);
+
             Target.GetComponent<PlayerLife>().TakeLife(damage);
 
         }
@@ -94,19 +101,25 @@ namespace com.Daniela.Enemy
 
         public void Dead()
         {
-            Destroy(gameObject);
+            GetComponent<EnemyAnimations>().EnemyDie();
+            _cM.Death();
+            this.enabled = false;
+            Destroy(gameObject, 2f);
             MedicineKitVerifier(percent_medicine_kit);
             _interfaceControl.UpdateDeathZombies();
             MyGenerator.RemoveZombieLiveAmount();
+
         }
+
         public void Wander()
         {
             wander_counter -= Time.deltaTime;
 
             if (wander_counter <= 0)
             {
+
                 random_pos = RandomPositions();
-                wander_counter += time_between_random_pos;
+                wander_counter += time_between_random_pos + Random.Range(-1f, 1f);
             }
             bool near = Vector3.Distance(transform.position, random_pos) <= 0.05;
             if (!near)
@@ -142,6 +155,8 @@ namespace com.Daniela.Enemy
                 Instantiate(MedicineKitPrefab, transform.position, Quaternion.identity);
             }
         }
+
+
     }
 
 }

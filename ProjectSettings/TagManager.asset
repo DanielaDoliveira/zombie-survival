@@ -8,6 +8,7 @@ TagManager:
   - Jogador
   - Generator
   - Slider
+  - Boss
   layers:
   - Default
   - TransparentFX

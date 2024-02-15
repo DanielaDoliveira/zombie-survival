@@ -67,11 +67,14 @@
     <Compile Include="Assets/Game/Scripts/Enemy/ZombieGenerator.cs" />
     <Compile Include="Assets/Game/Scripts/Player/Bullet.cs" />
     <Compile Include="Assets/Game/Scripts/Enemy/ChooseZombieType.cs" />
-    <Compile Include="Assets/Game/Scripts/IDead.cs" />
     <Compile Include="Assets/Game/Scripts/Items/IHealthy.cs" />
     <Compile Include="Assets/Game/Scripts/Camera/CameraController.cs" />
+    <Compile Include="Assets/Game/Scripts/Camera/Billboard.cs" />
+    <Compile Include="Assets/Game/Scripts/System and Interface/MenuController.cs" />
     <Compile Include="Assets/Game/Scripts/Player/PlayerController.cs" />
     <Compile Include="Assets/Game/Scripts/System and Interface/PlayerLife.cs" />
+    <Compile Include="Assets/Game/Scripts/System and Interface/IDead.cs" />
+    <Compile Include="Assets/Game/Scripts/Enemy/BossGenerator.cs" />
     <Compile Include="Assets/Game/Scripts/Player/WeaponController.cs" />
     <Compile Include="Assets/Game/Scripts/Status.cs" />
     <Compile Include="Assets/Game/Scripts/Player/PlayerMovement.cs" />
@@ -80,9 +83,11 @@
     <Compile Include="Assets/Game/Scripts/Items/MedicineKit.cs" />
     <Compile Include="Assets/Game/Scripts/Enemy/EnemyController.cs" />
     <Compile Include="Assets/Game/Scripts/System and Interface/AudioManager.cs" />
+    <Compile Include="Assets/Game/Scripts/Enemy/BossController.cs" />
     <Compile Include="Assets/Game/Scripts/Enemy/IEnemyBehaviour.cs" />
     <Compile Include="Assets/Game/Scripts/Enemy/EnemyAnimations.cs" />
     <Compile Include="Assets/Game/Scripts/CharacterMovement.cs" />
+    <Compile Include="Assets/Game/Scripts/Enemy/BloodControl.cs" />
     <Compile Include="Assets/Game/Scripts/System and Interface/InterfaceControl.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -941,9 +946,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.AI.Navigation.csproj" />
     <ProjectReference Include="Unity.Burst.Editor.csproj" />
     <ProjectReference Include="Unity.Burst.csproj" />
     <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj" />
+    <ProjectReference Include="Unity.AI.Navigation.Updater.csproj" />
     <ProjectReference Include="Unity.2D.Common.Path.Editor.csproj" />
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj" />
     <ProjectReference Include="Unity.Mathematics.csproj" />
@@ -953,6 +960,8 @@
     <ProjectReference Include="UnityEditor.UI.csproj" />
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj" />
     <ProjectReference Include="UnityEngine.UI.csproj" />
+    <ProjectReference Include="Unity.AI.Navigation.Editor.csproj" />
+    <ProjectReference Include="Unity.AI.Navigation.Editor.ConversionSystem.csproj" />
     <ProjectReference Include="Unity.VSCode.Editor.csproj" />
     <ProjectReference Include="Unity.2D.Sprite.Editor.csproj" />
     <ProjectReference Include="Unity.2D.SpriteShape.Editor.csproj" />

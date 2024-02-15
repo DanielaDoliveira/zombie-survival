@@ -6,15 +6,19 @@ namespace com.Daniela.Enemy
 {
     public class EnemyAnimations : MonoBehaviour
     {
-      
+
         public void EnemyAttack(bool isAttacking)
         {
             GetComponent<Animator>().SetBool("Atacando", isAttacking);
         }
         public void EnemyMove(float move)
         {
-          
+
             GetComponent<Animator>().SetFloat("Movendo", move);
+        }
+        public void EnemyDie()
+        {
+            GetComponent<Animator>().SetTrigger("Morrer");
         }
     }
 

@@ -1,16 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using com.Daniela.Enemy;
 using com.Daniela.Management;
 using UnityEngine;
 
-namespace  com.Daniela.Player.Weapon
+namespace com.Daniela.Player.Weapon
 {
     public class Bullet : MonoBehaviour
     {
         private Rigidbody _rb;
-       private float _speed;
-        
+        private float _speed;
+
         private int shoot_damage;
         void Start()
         {
@@ -29,14 +30,25 @@ namespace  com.Daniela.Player.Weapon
         {
             _rb.MovePosition(_rb.position + transform.forward * _speed * Time.deltaTime);
         }
+
+
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Inimigo"))
+            Quaternion bulletInvertedPosition = Quaternion.LookRotation(-transform.forward);
+            switch (other.tag)
             {
-              
-                other.GetComponent<EnemyController>().TakeLife(shoot_damage);
-               
+                case "Inimigo":
+                    other.GetComponent<EnemyController>().TakeLife(shoot_damage);
+                    other.GetComponent<BloodControl>().BloodParticle(transform.position, bulletInvertedPosition);
+                    break;
+                case "Boss":
+                    other.GetComponent<BossController>().TakeLife(shoot_damage);
+                    other.GetComponent<BloodControl>().BloodParticle(transform.position, bulletInvertedPosition);
+                    break;
+
             }
+
+
             Destroy(gameObject);
         }
 

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public interface IEnemyBehaviour
 {
-    public void Behaviour();
+    public void EnemyAttackPlayer();
 
 }
-   
+
 
 

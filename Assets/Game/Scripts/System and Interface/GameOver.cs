@@ -11,6 +11,7 @@ public class GameOver : MonoBehaviour
     public TextMeshProUGUI TextTimeToSurvival, TextMaxTimeToSurvival;
     private int minutes, seconds;
     private float save_points;
+
     void Start()
     {
         save_points = PlayerPrefs.GetFloat("SAVEPOINTS");
@@ -25,6 +26,8 @@ public class GameOver : MonoBehaviour
     }
     public void StartGameOver()
     {
+
+
         GameOverPanel.SetActive(true);
         Time.timeScale = 0;
         minutes = (int)Time.timeSinceLevelLoad / 60;
@@ -34,6 +37,7 @@ public class GameOver : MonoBehaviour
     }
     public void ReloadScene()
     {
+        Debug.Log("clicked");
         int scene_to_reload = SceneManager.GetActiveScene().buildIndex;
 
         SceneManager.LoadScene(scene_to_reload);

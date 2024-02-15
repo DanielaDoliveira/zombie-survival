@@ -15,9 +15,9 @@ namespace com.Daniela.Enemy
 
         public void ChooseZombie()
         {
-            int zombie_type = Random.Range(1, 28);
+            int zombie_type = Random.Range(1, transform.childCount);
             transform.GetChild(zombie_type).gameObject.SetActive(true);
-           
+
         }
     }
 
